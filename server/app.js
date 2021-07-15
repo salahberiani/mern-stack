@@ -3,8 +3,8 @@ const crypto = require('crypto');
 const { exec } = require('child_process');
 require('dotenv').config();
 
-app.use(express.json()); //Parse json bodies
 const app = express();
+app.use(express.json()); //Parse json bodies
 
 app.get('/api', (req, res) => {
   res.json({ hello: 'hello world' });
