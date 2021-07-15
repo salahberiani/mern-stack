@@ -6,17 +6,12 @@ require('dotenv').config();
 app.use(express.json()); //Parse json bodies
 const app = express();
 
-<<<<<<< HEAD
-app.get('/api', (req, res) => {
-  res.json({ hello: 'hello world' });
-});
 
 app.get('/api/test', (req, res) => {
   res.json({ test: 'test world' });
 });
 
 
-=======
 app.get('/api/hi', (req, res) => {
   res.json({ hello: 'hello world' });
 });
@@ -54,7 +49,7 @@ function validateSecret(req, res, next) {
     return next('Signatures did not match');
   }
 }
->>>>>>> 5109b03669749565eed89125ed48ad2972615511
+
 app.listen(5000, () => {
   console.log('server listening on port 5000');
 });
