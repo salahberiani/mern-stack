@@ -19,7 +19,7 @@ app.get('/api/hi', (req, res) => {
 });
 
 app.post('/api/redeploy', validateSecret, (req, res) => {
-  exec('git pull', (err, stdout, stderr) => {
+  exec('cd .. && git pull', (err, stdout, stderr) => {
     if (err) {
       //some err occurred
       console.error(err);
