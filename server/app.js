@@ -10,7 +10,7 @@ app.get('/api/test', (req, res) => {
   res.json({ test: 'test world' });
 });
 
-app.get('/api/hi', (req, res) => {
+app.get('/api/hello', (req, res) => {
   res.json({ hello: 'hello world' });
 });
 
