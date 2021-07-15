@@ -17,7 +17,7 @@ app.post('/api/redeploy', validateSecret, (req, res) => {
       console.error(err);
       res.status(403).send(err);
     } else {
-      // the *entire* stdout and stderr (buffered)
+      // the *entire* stdout and stderr
       console.log(`stdout: ${stdout}`);
       console.log(`stderr: ${stderr}`);
       res.status(200).send(`Auto deploy completed ${stdout} ${stderr}`);
