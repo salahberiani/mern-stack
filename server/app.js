@@ -6,26 +6,20 @@ require('dotenv').config();
 app.use(express.json()); //Parse json bodies
 const app = express();
 
-<<<<<<< HEAD
 app.get('/api', (req, res) => {
   res.json({ hello: 'hello world' });
 });
-=======
->>>>>>> 6e01a0faeda993a18613e26924e34a6691579535
 
 app.get('/api/test', (req, res) => {
   res.json({ test: 'test world' });
 });
-
-<<<<<<< HEAD
-=======
 
 app.get('/api/hi', (req, res) => {
   res.json({ hello: 'hello world' });
 });
 
 app.post('/api/redeploy', validateSecret, (req, res) => {
-  exec('git pull && npm run post-deploy', (err, stdout, stderr) => {
+  exec('git pull', (err, stdout, stderr) => {
     if (err) {
       //some err occurred
       console.error(err);
@@ -58,7 +52,6 @@ function validateSecret(req, res, next) {
   }
 }
 
->>>>>>> 6e01a0faeda993a18613e26924e34a6691579535
 app.listen(5000, () => {
   console.log('server listening on port 5000');
 });
