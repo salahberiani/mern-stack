@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import axios from 'axios';
+import { Button } from '@chakra-ui/react';
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload!!
         </p>
         <p>{state?.hello}</p>
+        <Button colorScheme="blue">Button</Button>
         <span>
           <span>Learn </span>
           <a
