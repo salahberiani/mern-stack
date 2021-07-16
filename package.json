@@ -1,0 +1,12 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/salahberiani/mern-stack.git",
+  "author": "salahberiani <salaheddinberiani@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+  "start": "pm2 start ecosystem.config.js",
+  "stop": "pm2 stop ecosystem.config.js"
+  }
+}

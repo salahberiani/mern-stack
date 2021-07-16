@@ -15,18 +15,21 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.post('/api/redeploy', validateSecret, (req, res) => {
-  exec('cd .. && git pull && cd client && yarn build', (err, stdout, stderr) => {
-    if (err) {
-      //some err occurred
-      console.error(err);
-      res.status(403).send(err);
-    } else {
-      // the *entire* stdout and stderr
-      console.log(`stdout: ${stdout}`);
-      console.log(`stderr: ${stderr}`);
-      res.status(200).send(`Auto deploy completed ${stdout} ${stderr}`);
+  exec(
+    'cd .. && yarn stop && git pull && cd client && yarn build && yarn start',
+    (err, stdout, stderr) => {
+      if (err) {
+        //some err occurred
+        console.error(err);
+        res.status(403).send(err);
+      } else {
+        // the *entire* stdout and stderr
+        console.log(`stdout: ${stdout}`);
+        console.log(`stderr: ${stderr}`);
+        res.status(200).send(`Auto deploy completed ${stdout} ${stderr}`);
+      }
     }
-  });
+  );
 });
 
 function validateSecret(req, res, next) {
