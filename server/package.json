@@ -8,13 +8,13 @@
     "backend": "nodemon app.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix ../client\"",
-    "prod":"concurrently \"npm start\" \"npm run prod --prefix ../client\""
-
+    "prod": "concurrently \"npm start\" \"npm run prod --prefix ../client\""
   },
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.13.2"
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",

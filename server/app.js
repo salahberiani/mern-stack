@@ -1,9 +1,12 @@
 const express = require('express');
 const crypto = require('crypto');
+const morgan = require('morgan');
+
 const { exec } = require('child_process');
 require('dotenv').config();
 
 const app = express();
+morgan('tiny');
 app.use(express.json()); //Parse json bodies
 
 app.get('/api/hi', (req, res) => {

@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+import axios from 'axios';
 import './App.css';
 
 function App() {
+  const [state, setState] = useState();
+  useEffect(() => {
+    axios
+      .get('/api/hi')
+      .then((res) => {
+        console.log(res);
+        setState(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
@@ -12,6 +25,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload!!
         </p>
+        <p>{state?.hello}</p>
         <span>
           <span>Learn </span>
           <a
