@@ -4,7 +4,7 @@ module.exports = {
       name: 'front',
       watch: true,
       script: './client/server.js',
-      // Delay between restart
+      // Delay between restartssss
       watch_delay: 10000,
       ignore_watch: ['node_modules', '.git'],
       watch_options: {
