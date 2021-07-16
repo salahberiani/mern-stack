@@ -27,7 +27,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload!!
         </p>
         <p>{state?.hello}</p>
-        <Button colorScheme="blue">Button</Button>
+        <Button colorScheme="red">Button</Button>
         <span>
           <span>Learn </span>
           <a
