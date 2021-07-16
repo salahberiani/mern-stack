@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 app.use(express.json()); //Parse json bodies
 
-app.get('/api/hello', (req, res) => {
+app.get('/api/hi', (req, res) => {
   res.json({ hello: 'hello world' });
 });
 
