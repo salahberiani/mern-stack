@@ -12,7 +12,7 @@ app.get('/api/hi', (req, res) => {
 
 app.post('/api/redeploy', validateSecret, (req, res) => {
   exec(
-    'cd .. && yarn stop && git pull && cd client && yarn build && yarn start',
+    'cd .. && yarn stop && git pull && cd client && yarn build && cd .. &&yarn start',
     (err, stdout, stderr) => {
       if (err) {
         //some err occurred
