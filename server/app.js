@@ -33,6 +33,7 @@ app.post('/api/redeploy', validateSecret, (req, res) => {
 });
 
 function validateSecret(req, res, next) {
+  console.log('thats mean hook is working');
   /**
    * Passing an argument to next() in middleware
    * throws an error to the error handler automatically
